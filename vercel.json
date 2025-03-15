@@ -1,20 +1,36 @@
 {
   "version": 2,
-  "projects": {
-    "admin": {
-      "root": "apps/admin",
-      "buildCommand": "pnpm run build",
-      "outputDirectory": "out"
+  "builds": [
+    {
+      "src": "apps/admin/package.json",
+      "use": "@vercel/next",
+      "config": {
+        "outputDirectory": "out"
+      }
     },
-    "client": {
-      "root": "apps/client",
-      "buildCommand": "pnpm run build",
-      "outputDirectory": "out"
+    {
+      "src": "apps/client/package.json",
+      "use": "@vercel/next",
+      "config": {
+        "outputDirectory": "out"
+      }
     },
-    "api": {
-      "root": "apps/api",
-      "buildCommand": "pnpm run build",
-      "outputDirectory": ".vercel/output"
+    {
+      "src": "apps/api/package.json",
+      "use": "@vercel/node",
+      "config": {
+        "outputDirectory": ".vercel/output"
+      }
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "apps/api/.vercel/output/functions/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "apps/client/$1"
+    }
+  ]
 }
