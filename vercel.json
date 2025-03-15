@@ -1,12 +1,12 @@
 {
   "version": 2,
   "projects": {
-    "front1": {
+    "admin": {
       "root": "apps/admin",
       "buildCommand": "pnpm run build",
       "outputDirectory": "out"
     },
-    "front2": {
+    "client": {
       "root": "apps/client",
       "buildCommand": "pnpm run build",
       "outputDirectory": "out"
