@@ -1,0 +1,17 @@
+{
+  "name": "gd-dashboard-api",
+  "scripts": {
+    "dev": "pnpm run index.ts",
+    "start": "pnpm run index.ts",
+    "build": "prisma generate && bun build ./src/index.ts"
+  },
+  "dependencies": {
+    "@gd-dashboard/types": "workspace:*",
+    "hono": "^4.7.4"
+  },
+  "devDependencies": {
+    "@prisma/client": "^6.5.0",
+    "@types/bun": "latest",
+    "prisma": "^6.5.0"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "projects": {
+    "front1": {
+      "root": "apps/admin",
+      "buildCommand": "pnpm run build",
+      "outputDirectory": "out"
+    },
+    "front2": {
+      "root": "apps/client",
+      "buildCommand": "pnpm run build",
+      "outputDirectory": "out"
+    },
+    "api": {
+      "root": "apps/api",
+      "buildCommand": "pnpm run build",
+      "outputDirectory": ".vercel/output"
+    }
+  }
+}
